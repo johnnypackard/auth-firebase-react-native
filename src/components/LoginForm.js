@@ -8,6 +8,7 @@ class LoginForm extends Component {
 
     onButtonPress() {
         const { email, password } = this.state;
+        
         this.setState({ error: '', loading: true });
 
         firebase.auth().signInWithEmailAndPassword(email, password)
@@ -29,7 +30,7 @@ class LoginForm extends Component {
             password: '',
             loading: false,
             error: ''
-        })
+        });
     }
 
     renderButton() {
